@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .button2 {
+        background-color: #008cba;
+      } /* Blue */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f1f1f1;
+      }
+
+      .header {
+        padding: 2px;
+        font-size: 40px;
+        text-align: center;
+        background: white;
+      }
+
+      .leftcolumn {
+        float: left;
+        width: 100%;
+      }
+
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Choyon's Comic Blog</h2>
+    </div>
+
+    <div class="row">
+      <div class="leftcolumn">
+        <br/>
+        <a href="/posts/new/"
+          ><p style="text-align: center">
+            <button class="button button1">Create New Post</button>
+          </p></a>
+        <a href="/posts"
+          ><p style="text-align: center">
+            <button class="button button2">View recent post</button>
+          </p></a>
+        <a href="https://www.marvel.com/comics?&options%5Boffset%5D=0&totalcount=12"target="_main"><p style="text-align: center"><img src="http://www.google.com/logos/doodles/2015/googles-new-logo-5078286822539264.3-hp2x.gif"/></a>
+        <p style="text-align: center">click on google for marvel comics</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Post</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  a:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: green;
+    color: white;
+  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+.header {
+  padding: 2px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Choyon's Comic Blog</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+        <h2>{{post.title}}</h2>
+        <img src="{{post.photos.url}}" height="300">
+        <p><h4>{{post.body}}</h4></p>
+        <a href="/posts/{{post.id}}/update/">Update Post</a>
+        <a href="/posts/{{post.id}}/delete/">Delete Post</a>
+        <a href="/posts/">Go Back</a>
+        {% comment %} <p><h5>{{post.created_at}}</h5></p> {% endcomment %}
+    </div> 
+  </div>
+</div>
+
+</body>
+</html>

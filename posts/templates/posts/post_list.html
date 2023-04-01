@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+  a:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: green;
+    color: white;
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+.header {
+  padding: 2px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+.leftcolumn {   
+  float: left;
+  width: 100%;
+}
+
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Choyon's Comic Blog</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    {% for post in posts %}
+    <div class="card">
+      {% comment %} <a style="text-decoration: none; color: black;" href="/post/{{post.pk}}"> {% endcomment %}
+        <h2>{{post.title}}</h2>
+        <img src="{{post.photos.url}}" height="250">
+        <p><h4>{{post.body|truncatewords:50}}</h4></p>
+        <a href="/posts/{{post.id}}" class="btn" target=""_blank"">View Full Post</a>
+        <p><h5>{{post.created_at}}</h5></p>
+      {% comment %} </a> {% endcomment %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+</body>
+</html>
